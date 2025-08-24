@@ -40,3 +40,41 @@ source .venv/bin/activate
 
 pip install --upgrade pip
 pip install -r requirements.txt
+```
+### 2) Add your data
+- **Training data format (example CSV):**
+  - Column `text`: the sentence or review
+  - Column `label`: integer class (e.g., 0=negative, 1=positive)
+- Put files in a `data/` folder, e.g.:
+  - `data/train.csv`
+  - `data/valid.csv`
+  - `data/test.csv`
+
+
+### 3) Train (example)
+```bash
+python sentiment_analysis_using_bert_model.py \
+  --mode train \
+  --train_path data/train.csv \
+  --valid_path data/valid.csv \
+  --model_name bert-base-uncased \
+  --epochs 3 \
+  --batch_size 16 \
+  --lr 2e-5 \
+  --output_dir outputs/
+```
+### 4) Evaluate (example)
+```bash
+python sentiment_analysis_using_bert_model.py \
+  --mode eval \
+  --test_path data/test.csv \
+  --model_dir outputs/
+```
+
+### 5) Inference (example)
+```bash
+python sentiment_analysis_using_bert_model.py \
+  --mode predict \
+  --text "I absolutely loved this product!" \
+  --model_dir outputs/
+```
