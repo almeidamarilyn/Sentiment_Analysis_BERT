@@ -1,6 +1,7 @@
 # Sentiment_Analysis_BERT
 
 A lightweight repo for fine-tuning a BERT model for sentiment analysis and running quick inferences. Built around a single Python script: `sentiment_analysis_using_bert_model.py`.
+
 ---
 
 ## 📖 Project Overview  
